@@ -35,6 +35,20 @@
             letter-spacing: 0.5px;
             border-bottom: 1px solid var(--border-color);
         }
+        /* Running Marquee Notice Bar Style */
+        .notice-bar {
+            background-color: #1e293b;
+            color: #38bdf8;
+            padding: 10px 0;
+            font-size: 1rem;
+            font-weight: bold;
+            border-bottom: 1px solid var(--border-color);
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .notice-bar marquee {
+            width: 100%;
+        }
         header {
             background: linear-gradient(135deg, #1e293b, #0f172a);
             padding: 30px 20px;
@@ -169,6 +183,13 @@
     <!-- Live Time Bar -->
     <div class="time-bar" id="live-clock">
         বাংলাদেশ সময় লোড হচ্ছে...
+    </div>
+
+    <!-- Running Notice Bar -->
+    <div class="notice-bar">
+        <marquee behavior="scroll" direction="left" scrollamount="5">
+            📢 সকল প্রকার Proxy, Vpn আমাদের শপে পাওয়া যায়। সকল প্রকার Vpn কিনতে আমাদের বটে জয়েন করুন। বটে স্টার্ট করার পরে ডিপোজিট করবেন। ডিপোজিট বিকাশ, নগদ, রকেট ও Binance এর মাধ্যমে করা যায়। নির্ভয়ে ও ১০০% নির্চিন্তে Proxy ও Vpn কিনতে পারবেন। ২৪/৭ সার্ভিস খোলা থাকে। 🚀
+        </marquee>
     </div>
 
     <header>
