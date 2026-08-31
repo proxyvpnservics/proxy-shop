@@ -22,9 +22,20 @@
             padding: 0;
             line-height: 1.6;
         }
+        /* Live Time Bar Style */
+        .time-bar {
+            background-color: #0284c7;
+            color: white;
+            text-align: center;
+            padding: 8px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border-color);
+        }
         header {
             background: linear-gradient(135deg, #1e293b, #0f172a);
-            padding: 40px 20px;
+            padding: 30px 20px;
             text-align: center;
             border-bottom: 1px solid var(--border-color);
         }
@@ -108,8 +119,33 @@
             text-decoration: none;
         }
     </style>
+    <script>
+        // Live Bangladesh Time Function
+        function updateBangladeshTime() {
+            const options = { 
+                timeZone: 'Asia/Dhaka', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric', 
+                weekday: 'long', 
+                hour: '2-digit', 
+                minute: '2-digit', 
+                second: '2-digit', 
+                hour12: true 
+            };
+            const now = new Date();
+            const timeString = new Intl.DateTimeFormat('bn-BD', options).format(now);
+            document.getElementById('live-clock').innerText = "বাংলাদেশ সময়: " + timeString;
+        }
+        setInterval(updateBangladeshTime, 1000);
+        window.onload = updateBangladeshTime;
+    </script>
 </head>
 <body>
+
+    <div class="time-bar" id="live-clock">
+        বাংলাদেশ সময় লোড হচ্ছে...
+    </div>
 
     <header>
         <h1>🌐 Proxy & VPN Service Hub</h1>
@@ -121,7 +157,6 @@
         <h2>🛍️ আমাদের সেবাসমূহ ও ক্যাটাগরি</h2>
         
         <div class="grid">
-            <!-- Proxy Section -->
             <div class="card">
                 <h3>📶 GB & ISP Proxy</h3>
                 <ul>
@@ -145,7 +180,6 @@
                 </ul>
             </div>
 
-            <!-- VPN Section -->
             <div class="card">
                 <h3>🔑 Premium VPNs</h3>
                 <ul>
@@ -172,7 +206,6 @@
                 </ul>
             </div>
 
-            <!-- Premium Apps Section -->
             <div class="card">
                 <h3>📱 Premium Apps</h3>
                 <ul>
@@ -183,7 +216,6 @@
                 </ul>
             </div>
 
-            <!-- AI Tools Section -->
             <div class="card">
                 <h3>✨ AI Tools & Others</h3>
                 <ul>
