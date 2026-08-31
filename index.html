@@ -13,6 +13,8 @@
             --accent-color: #38bdf8;
             --accent-hover: #0284c7;
             --border-color: #334155;
+            --btn-green: #10b981;
+            --btn-green-hover: #059669;
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -65,6 +67,23 @@
             color: white;
             transform: translateY(-2px);
         }
+        .buy-now-btn {
+            display: block;
+            width: 100%;
+            background-color: var(--btn-green);
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 15px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background 0.3s ease, transform 0.2s;
+        }
+        .buy-now-btn:hover {
+            background-color: var(--btn-green-hover);
+            transform: translateY(-2px);
+        }
         .container {
             max-width: 1100px;
             margin: 40px auto;
@@ -88,6 +107,9 @@
             padding: 25px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         .card:hover {
             transform: translateY(-5px);
@@ -102,6 +124,7 @@
         ul {
             padding-left: 20px;
             color: var(--text-muted);
+            flex-grow: 1;
         }
         ul li {
             margin-bottom: 6px;
@@ -143,6 +166,7 @@
 </head>
 <body>
 
+    <!-- Live Time Bar -->
     <div class="time-bar" id="live-clock">
         বাংলাদেশ সময় লোড হচ্ছে...
     </div>
@@ -157,73 +181,89 @@
         <h2>🛍️ আমাদের সেবাসমূহ ও ক্যাটাগরি</h2>
         
         <div class="grid">
+            <!-- Proxy Section -->
             <div class="card">
-                <h3>📶 GB & ISP Proxy</h3>
-                <ul>
-                    <li>Datampuls Proxy</li>
-                    <li>9 Proxy</li>
-                    <li>711 Proxy</li>
-                    <li>NovProxy</li>
-                    <li>Thordata Proxy</li>
-                    <li>Repaid Proxy</li>
-                    <li>IP Rocket Proxy</li>
-                    <li>Cli Proxy</li>
-                    <li>1024 Proxy</li>
-                    <li>B2 Proxy</li>
-                    <li>Bunny Proxy</li>
-                    <li>Helodata Proxy</li>
-                    <li>Hub Proxy</li>
-                    <li>Loki Proxy</li>
-                    <li>Meta Max Proxy</li>
-                    <li>Miyaip Proxy</li>
-                    <li><strong>রেট:</strong> ১৩০ - ১৬০ টাকা প্রতি জিবি থেকে শুরু।</li>
-                </ul>
+                <div>
+                    <h3>📶 GB & ISP Proxy</h3>
+                    <ul>
+                        <li>Datampuls Proxy</li>
+                        <li>9 Proxy</li>
+                        <li>711 Proxy</li>
+                        <li>NovProxy</li>
+                        <li>Thordata Proxy</li>
+                        <li>Repaid Proxy</li>
+                        <li>IP Rocket Proxy</li>
+                        <li>Cli Proxy</li>
+                        <li>1024 Proxy</li>
+                        <li>B2 Proxy</li>
+                        <li>Bunny Proxy</li>
+                        <li>Helodata Proxy</li>
+                        <li>Hub Proxy</li>
+                        <li>Loki Proxy</li>
+                        <li>Meta Max Proxy</li>
+                        <li>Miyaip Proxy</li>
+                        <li><strong>রেট:</strong> ১৩০ - ১৬০ টাকা প্রতি জিবি থেকে শুরু।</li>
+                    </ul>
+                </div>
+                <a href="https://t.me/Proxyvpnservics_bot" class="buy-now-btn" target="_blank">🛒 Buy Now (কিনুন)</a>
             </div>
 
+            <!-- VPN Section -->
             <div class="card">
-                <h3>🔑 Premium VPNs</h3>
-                <ul>
-                    <li>Avast VPN</li>
-                    <li>HMA VPN</li>
-                    <li>Atlas VPN</li>
-                    <li>Hotspot Shield</li>
-                    <li>Bitdefender</li>
-                    <li>IPVanish</li>
-                    <li>Nord VPN</li>
-                    <li>BetterNet</li>
-                    <li>Browsec</li>
-                    <li>Norton</li>
-                    <li>Cheap VPN</li>
-                    <li>Panda VPN</li>
-                    <li>CyberGhost</li>
-                    <li>PIA VPN</li>
-                    <li>Surfshark</li>
-                    <li>Proton VPN</li>
-                    <li>Express VPN</li>
-                    <li>Turbo VPN</li>
-                    <li>X-VPN</li>
-                    <li><strong>স্ট্যাটাস:</strong> প্রিমিয়াম অ্যাকাউন্ট ও সাবস্ক্রিপশন উপলব্ধ।</li>
-                </ul>
+                <div>
+                    <h3>🔑 Premium VPNs</h3>
+                    <ul>
+                        <li>Avast VPN</li>
+                        <li>HMA VPN</li>
+                        <li>Atlas VPN</li>
+                        <li>Hotspot Shield</li>
+                        <li>Bitdefender</li>
+                        <li>IPVanish</li>
+                        <li>Nord VPN</li>
+                        <li>BetterNet</li>
+                        <li>Browsec</li>
+                        <li>Norton</li>
+                        <li>Cheap VPN</li>
+                        <li>Panda VPN</li>
+                        <li>CyberGhost</li>
+                        <li>PIA VPN</li>
+                        <li>Surfshark</li>
+                        <li>Proton VPN</li>
+                        <li>Express VPN</li>
+                        <li>Turbo VPN</li>
+                        <li>X-VPN</li>
+                        <li><strong>স্ট্যাটাস:</strong> প্রিমিয়াম অ্যাকাউন্ট ও সাবস্ক্রিপশন উপলব্ধ।</li>
+                    </ul>
+                </div>
+                <a href="https://t.me/Proxyvpnservics_bot" class="buy-now-btn" target="_blank">🛒 Buy Now (কিনুন)</a>
             </div>
 
+            <!-- Premium Apps Section -->
             <div class="card">
-                <h3>📱 Premium Apps</h3>
-                <ul>
-                    <li><strong>Video Editing:</strong> CapCut Pro, InShot Pro</li>
-                    <li><strong>Photo Enhancement:</strong> PicsArt Pro, Remini Pro</li>
-                    <li><strong>Streaming:</strong> YouTube Pro, Playz TV</li>
-                    <li>ন্যূনতম মূল্যে প্রিমিয়াম ফিচারের নিশ্চয়তা।</li>
-                </ul>
+                <div>
+                    <h3>📱 Premium Apps</h3>
+                    <ul>
+                        <li><strong>Video Editing:</strong> CapCut Pro, InShot Pro</li>
+                        <li><strong>Photo Enhancement:</strong> PicsArt Pro, Remini Pro</li>
+                        <li><strong>Streaming:</strong> YouTube Pro, Playz TV</li>
+                        <li>ন্যূনতম মূল্যে প্রিমিয়াম ফিচারের নিশ্চয়তা।</li>
+                    </ul>
+                </div>
+                <a href="https://t.me/Proxyvpnservics_bot" class="buy-now-btn" target="_blank">🛒 Buy Now (কিনুন)</a>
             </div>
 
+            <!-- AI Tools Section -->
             <div class="card">
-                <h3>✨ AI Tools & Others</h3>
-                <ul>
-                    <li><strong>Gemini Plus:</strong> Advanced AI Subscription</li>
-                    <li><strong>Figma Pro Edu:</strong> 2 Years Access</li>
-                    <li><strong>Dollar Buy/Sell:</strong> bKash, Nagad, Binance & LTC</li>
-                    <li>দ্রুত ও নিরাপদ লেনদেন সুবিধা।</li>
-                </ul>
+                <div>
+                    <h3>✨ AI Tools & Others</h3>
+                    <ul>
+                        <li><strong>Gemini Plus:</strong> Advanced AI Subscription</li>
+                        <li><strong>Figma Pro Edu:</strong> 2 Years Access</li>
+                        <li><strong>Dollar Buy/Sell:</strong> bKash, Nagad, Binance & LTC</li>
+                        <li>দ্রুত ও নিরাপদ লেনদেন সুবিধা।</li>
+                    </ul>
+                </div>
+                <a href="https://t.me/Proxyvpnservics_bot" class="buy-now-btn" target="_blank">🛒 Buy Now (কিনুন)</a>
             </div>
         </div>
 
