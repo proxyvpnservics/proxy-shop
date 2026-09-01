@@ -11,16 +11,11 @@
             --bg-color: #0f172a;
             --card-bg: #1e293b;
             --text-color: #f8fafc;
-            --text-muted: #94a3b8;
-            --accent-color: #38bdf8;
-            --accent-hover: #0284c7;
             --border-color: #334155;
-            --btn-green: #10b981;
-            --btn-green-hover: #059669;
         }
         @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap');
         body {
-            font-family: 'Hind Siliguri', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Hind Siliguri', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             margin: 0;
@@ -34,9 +29,7 @@
             padding: 10px;
             font-size: 0.95rem;
             font-weight: 600;
-            letter-spacing: 0.5px;
             border-bottom: 1px solid var(--border-color);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
@@ -56,10 +49,10 @@
         </p>
         
         <div class="mt-6 flex flex-wrap justify-center gap-4">
-            <a href="https://t.me/Proxyvpnservics_bot" target="_blank" class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold px-6 py-3 rounded-xl shadow-lg transition-all transform hover:scale-105">
+            <a href="https://t.me/Proxyvpnservics_bot" target="_blank" class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:scale-105 transition-all">
                 <i class="fa-solid fa-rocket"></i> বট ওপেন করুন
             </a>
-            <a href="#deposit-section" class="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-semibold px-6 py-3 rounded-xl shadow-lg transition-all transform hover:scale-105">
+            <a href="#deposit-section" class="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:scale-105 transition-all">
                 <i class="fa-solid fa-wallet"></i> ডিপোজিট করুন
             </a>
         </div>
@@ -67,13 +60,12 @@
 
     <main class="max-w-4xl mx-auto px-4 py-6 w-full space-y-8">
         <h2 class="text-2xl font-bold text-blue-400 text-center flex items-center justify-center gap-2">
-            <span>🛍️</span> আমাদের সকল সেবাসমূহ ও প্রডাক্ট
+            <span>🛍️</span> সকল প্রকার ভিপিএন, প্রক্সি ও ডিজিটাল সেবাসমূহ
         </h2>
 
-        <!-- Products Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- GB & ISP Proxy -->
-            <div class="bg-[var(--card-bg)] border border-[var(--border-color)] rounded-2xl p-6 shadow-xl backdrop-blur-sm">
+            <div class="bg-[var(--card-bg)] border border-[var(--border-color)] rounded-2xl p-6 shadow-xl">
                 <h3 class="text-lg font-bold text-amber-400 mb-4 flex items-center gap-2">
                     <i class="fa-solid fa-signal"></i> GB & ISP Proxy
                 </h3>
@@ -86,34 +78,47 @@
                 </ul>
             </div>
 
-            <!-- Premium VPN & AI Tools -->
-            <div class="bg-[var(--card-bg)] border border-[var(--border-color)] rounded-2xl p-6 shadow-xl backdrop-blur-sm">
+            <!-- Premium VPN Services -->
+            <div class="bg-[var(--card-bg)] border border-[var(--border-color)] rounded-2xl p-6 shadow-xl">
                 <h3 class="text-lg font-bold text-emerald-400 mb-4 flex items-center gap-2">
-                    <i class="fa-solid fa-shield-halved"></i> Premium VPN & AI Tools
+                    <i class="fa-solid fa-shield-halved"></i> Premium VPN Services
                 </h3>
                 <ul class="space-y-2.5 text-gray-300 text-sm">
-                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> NordVPN, ExpressVPN & Surfshark</li>
-                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Google Gemini Advanced / AI Pro</li>
-                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> ChatGPT Plus & Claude Pro</li>
-                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Canva Pro & Netflix Premium</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> NordVPN</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> ExpressVPN</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Surfshark</li>
+                </ul>
+            </div>
+
+            <!-- AI & Digital Tools Subscriptions -->
+            <div class="bg-[var(--card-bg)] border border-[var(--border-color)] rounded-2xl p-6 shadow-xl">
+                <h3 class="text-lg font-bold text-cyan-400 mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-robot"></i> AI & Digital Tools Subscriptions
+                </h3>
+                <ul class="space-y-2.5 text-gray-300 text-sm">
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> Google Gemini Advanced / AI Pro</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> ChatGPT Plus</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> Claude Pro</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> Canva Pro</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> Netflix Premium</li>
                 </ul>
             </div>
 
             <!-- Social Media & Other Tools -->
-            <div class="bg-[var(--card-bg)] border border-[var(--border-color)] rounded-2xl p-6 shadow-xl backdrop-blur-sm md:col-span-2">
-                <h3 class="text-lg font-bold text-cyan-400 mb-4 flex items-center gap-2">
-                    <i class="fa-solid fa-share-nodes"></i> Social Media & Digital Tools
+            <div class="bg-[var(--card-bg)] border border-[var(--border-color)] rounded-2xl p-6 shadow-xl">
+                <h3 class="text-lg font-bold text-purple-400 mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-share-nodes"></i> Social Media & Other Tools
                 </h3>
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm text-gray-300">
-                    <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> Telegram Premium Services</div>
-                    <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> YouTube Premium Subscriptions</div>
-                    <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> RDP & VPS Hosting Services</div>
-                </div>
+                <ul class="space-y-2.5 text-gray-300 text-sm">
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span> Telegram Premium Services</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span> YouTube Premium Subscriptions</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span> RDP & VPS Hosting Services</li>
+                </ul>
             </div>
         </div>
 
         <!-- Deposit Section -->
-        <div id="deposit-section" class="bg-[var(--card-bg)] border border-[var(--border-color)] rounded-2xl p-6 md:p-8 shadow-2xl backdrop-blur-sm mt-8">
+        <div id="deposit-section" class="bg-[var(--card-bg)] border border-[var(--border-color)] rounded-2xl p-6 md:p-8 shadow-2xl mt-8">
             <h2 class="text-2xl font-bold text-blue-400 mb-6 flex items-center gap-2">
                 <i class="fa-solid fa-wallet"></i> বিকাশ / নগদ ডিপোজিট ফোল্ডার
             </h2>
@@ -192,7 +197,6 @@
             const amount = document.getElementById('deposit-amount').value;
             const trx = document.getElementById('deposit-trx').value;
 
-            // এখানে অ্যাডমিন নোটিফিকেশন হ্যান্ডেল করা হয়েছে
             console.log(`Deposit Request Sent -> Method: ${method}, Amount: ${amount}, TrxID: ${trx}`);
 
             document.getElementById('deposit-form').reset();
