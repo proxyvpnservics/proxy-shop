@@ -105,7 +105,7 @@
             </div>
 
             <!-- Social Media & Other Tools -->
-            <div class="bg-[var(--card-bg)] border border-[var(--border-color)] rounded-2xl p-6 shadow-xl">
+            <main class="bg-[var(--card-bg)] border border-[var(--border-color)] rounded-2xl p-6 shadow-xl">
                 <h3 class="text-lg font-bold text-purple-400 mb-4 flex items-center gap-2">
                     <i class="fa-solid fa-share-nodes"></i> Social Media & Other Tools
                 </h3>
@@ -114,7 +114,7 @@
                     <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span> YouTube Premium Subscriptions</li>
                     <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span> RDP & VPS Hosting Services</li>
                 </ul>
-            </div>
+            </main>
         </div>
 
         <!-- Deposit Section -->
@@ -127,8 +127,8 @@
                 <div>
                     <label class="block text-sm font-medium text-gray-300 mb-2">পেমেন্ট মাধ্যম সিলেক্ট করুন:</label>
                     <select id="payment-method" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500">
-                        <option value="bkash">বিকাশ (Bkash Personal)</option>
-                        <option value="nagad">নগদ (Nagad Personal)</option>
+                        <option value="বিকাশ (Bkash)">বিকাশ (Bkash Personal)</option>
+                        <option value="নগদ (Nagad)">নগদ (Nagad Personal)</option>
                     </select>
                 </div>
 
@@ -144,6 +144,10 @@
 
                 <form id="deposit-form" onsubmit="submitDeposit(event)" class="space-y-4">
                     <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-1">আপনার নাম বা ইউজারনেম:</label>
+                        <input type="text" id="user-name" required placeholder="যেমন: Tanvir Ahmed" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500">
+                    </div>
+                    <div>
                         <label class="block text-sm font-medium text-gray-300 mb-1">টাকার পরিমাণ (Amount):</label>
                         <input type="number" id="deposit-amount" required placeholder="যেমন: 500" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500">
                     </div>
@@ -151,13 +155,13 @@
                         <label class="block text-sm font-medium text-gray-300 mb-1">ট্রানজেকশন আইডি (TrxID):</label>
                         <input type="text" id="deposit-trx" required placeholder="যেমন: 9H7A6..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white uppercase focus:outline-none focus:border-blue-500">
                     </div>
-                    <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3.5 rounded-xl transition-all shadow-lg flex items-center justify-center gap-2">
+                    <button type="submit" id="submit-btn" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3.5 rounded-xl transition-all shadow-lg flex items-center justify-center gap-2">
                         <i class="fa-solid fa-paper-plane"></i> ডিপোজিট রিকোয়েস্ট জমা দিন
                     </button>
                 </form>
 
                 <div id="success-msg" class="hidden p-4 bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-sm rounded-xl text-center">
-                    ✅ আপনার ডিপোজিট রিকোয়েস্ট সফলভাবে অ্যাডমিনের কাছে পাঠানো হয়েছে। অ্যাডমিন যাচাই করে Approve/Reject করবেন।
+                    ✅ আপনার ডিপোজিট রিকোয়েস্ট সফলভাবে <a href="https://t.me/proxyvpnservice17" target="_blank" class="underline font-bold">@proxyvpnservice17</a> চ্যানেলে পাঠানো হয়েছে!
                 </div>
             </div>
         </div>
@@ -191,20 +195,71 @@
             alert('সফলভাবে নাম্বার কপি হয়েছে: ' + numberText);
         }
 
+        // টেলিগ্রাম বট দিয়ে চ্যানেলে এপ্রুভ/রিজেক্ট বাটনসহ নোটিফিকেশন পাঠানোর ফাংশন
         function submitDeposit(event) {
             event.preventDefault();
+            
+            const userName = document.getElementById('user-name').value;
             const method = document.getElementById('payment-method').value;
             const amount = document.getElementById('deposit-amount').value;
             const trx = document.getElementById('deposit-trx').value;
 
-            console.log(`Deposit Request Sent -> Method: ${method}, Amount: ${amount}, TrxID: ${trx}`);
+            // ⚠️ নিচের বোট টোকেন এবং চ্যাট আইডি আপনার বোট ও চ্যানেলের তথ্য দিয়ে পরিবর্তন করুন
+            const botToken = "YOUR_BOT_TOKEN_HERE"; 
+            const chatId = "@proxyvpnservice17"; // অথবা আপনার চ্যানেলের চ্যাট আইডি (যেমন: -100xxxxxxxxxx)
 
-            document.getElementById('deposit-form').reset();
-            const msg = document.getElementById('success-msg');
-            msg.classList.remove('hidden');
-            setTimeout(() => {
-                msg.classList.add('hidden');
-            }, 6000);
+            const message = `🔔 **নতুন ডিপোজিট রিকোয়েস্ট!**\n\n` +
+                            `👤 নাম: ${userName}\n` +
+                            `💳 মাধ্যম: ${method}\n` +
+                            `💵 অ্যামাউন্ট: ${amount} TK\n` +
+                            `🔑 TrxID: \`${trx}\``;
+
+            // টেলিগ্রাম ইনলাইন কিবোর্ড (Approve / Rejected বাটন)
+            const inlineKeyboard = {
+                inline_keyboard: [
+                    [
+                        { text: "✅ Approve", callback_data: `approve_${trx}` },
+                        { text: "❌ Rejected", callback_data: `reject_${trx}` }
+                    ]
+                ]
+            };
+
+            const btn = document.getElementById('submit-btn');
+            btn.innerText = "পাঠানো হচ্ছে...";
+            btn.disabled = true;
+
+            // Telegram API রিকোয়েস্ট পাঠানো
+            fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    chat_id: chatId,
+                    text: message,
+                    parse_mode: "Markdown",
+                    reply_markup: inlineKeyboard
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if(data.ok) {
+                    document.getElementById('deposit-form').reset();
+                    const msg = document.getElementById('success-msg');
+                    msg.classList.remove('hidden');
+                    setTimeout(() => { msg.classList.add('hidden'); }, 6000);
+                } else {
+                    alert('মেসেজ পাঠাতে সমস্যা হয়েছে। দয়া করে বোট টোকেন এবং চ্যাট আইডি চেক করুন।');
+                }
+                btn.innerHTML = `<i class="fa-solid fa-paper-plane"></i> ডিপোজিট রিকোয়েস্ট জমা দিন`;
+                btn.disabled = false;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('ইন্টারনেট কানেকশন অথবা বোট কনফিগারেশনে সমস্যা রয়েছে।');
+                btn.innerHTML = `<i class="fa-solid fa-paper-plane"></i> ডিপোজিট রিকোয়েস্ট জমা দিন`;
+                btn.disabled = false;
+            });
         }
     </script>
 </body>
