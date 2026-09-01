@@ -203,7 +203,8 @@
             const amount = document.getElementById('deposit-amount').value;
             const trx = document.getElementById('deposit-trx').value;
 
-            const scriptURL = "https://script.google.com/macros/s/AKfycbyv4qv3JPYVr_xSnPU9IrVM7pOUOFpydQeqkpXQPnTz3qzaDLYPuuQLfaM18ulovweX/exec"; 
+            // নতুন আপডেট করা গুগল অ্যাপস স্ক্রিপ্ট ওয়েব অ্যাপ ইউআরএল
+            const scriptURL = "https://script.google.com/macros/s/AKfycbxzC10NalbSQWNOcJZ-Ey0XrDRJWdHqky9le5APuiL9G8P6MLsiZ9EXhelYlm7ISyU/exec"; 
 
             const btn = document.getElementById('submit-btn');
             btn.innerText = "পাঠানো হচ্ছে...";
@@ -216,14 +217,12 @@
                 trx: trx
             };
 
-            // টেস্টিং ও ফাস্ট ডেলিভারির জন্য সরাসরি ইমেজ বিকন বা নো-কোরস ফেচ ব্যবহার করা হচ্ছে যাতে এরর না আসে
             fetch(scriptURL, {
                 method: 'POST',
                 mode: 'no-cors',
                 body: JSON.stringify(formData)
             });
 
-            // তৎক্ষণাৎ সাকসেস মেসেজ শো করাবে
             setTimeout(() => {
                 document.getElementById('deposit-form').reset();
                 const msg = document.getElementById('success-msg');
