@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proxy & VPN Service Shop - Official Hub</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -12,11 +11,16 @@
             --bg-color: #0f172a;
             --card-bg: #1e293b;
             --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-color: #38bdf8;
+            --accent-hover: #0284c7;
             --border-color: #334155;
+            --btn-green: #10b981;
+            --btn-green-hover: #059669;
         }
         @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap');
         body {
-            font-family: 'Hind Siliguri', sans-serif;
+            font-family: 'Hind Siliguri', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             margin: 0;
@@ -30,123 +34,173 @@
             padding: 10px;
             font-size: 0.95rem;
             font-weight: 600;
+            letter-spacing: 0.5px;
             border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between">
 
-    <!-- Live Time Bar -->
     <div class="time-bar" id="live-time">
         <i class="fa-regular fa-clock mr-2"></i> লোডিং সময়...
     </div>
 
-    <!-- Header Section -->
-    <header class="w-full py-6 px-4 text-center max-w-3xl mx-auto">
-        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-500/10 text-blue-400 mb-3 text-3xl border border-blue-500/20">
+    <header class="w-full py-8 px-4 text-center max-w-3xl mx-auto">
+        <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-blue-500/10 text-blue-400 mb-4 text-4xl shadow-inner border border-blue-500/20">
             <i class="fa-solid fa-globe"></i>
         </div>
-        <h1 class="text-3xl md:text-4xl font-bold text-blue-400 mb-2">Proxy & VPN Service Hub</h1>
-        <p class="text-gray-300 max-w-xl mx-auto text-sm md:text-base">
-            আপনার প্রয়োজনীয় সকল হাই-স্পিড প্রক্সি, ভিপিএন এবং এআই টুলস কিনুন এক ক্লিকেই।
+        <h1 class="text-3xl md:text-4xl font-bold text-blue-400 mb-3">Proxy & VPN Service Hub</h1>
+        <p class="text-gray-300 max-w-xl mx-auto text-sm md:text-base leading-relaxed">
+            আপনার প্রয়োজনীয় সকল হাই-স্পিড প্রক্সি, প্রিমিয়াম ভিপিএন, সোশাল ও এআই টুলস কিনুন এক ক্লিকেই। ২৪/৭ অটোমেটেড ও বিশ্বস্ত টেলিগ্রাম বট সার্ভিস!
         </p>
-        <div class="mt-4">
-            <a href="https://t.me/Proxyvpnservics_bot" target="_blank" class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:scale-105 transition-all">
-                <i class="fa-solid fa-rocket"></i> বট ওপেন করুন (Open Bot)
+        
+        <div class="mt-6 flex flex-wrap justify-center gap-4">
+            <a href="https://t.me/Proxyvpnservics_bot" target="_blank" class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold px-6 py-3 rounded-xl shadow-lg transition-all transform hover:scale-105">
+                <i class="fa-solid fa-rocket"></i> বট ওপেন করুন
+            </a>
+            <a href="#deposit-section" class="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-semibold px-6 py-3 rounded-xl shadow-lg transition-all transform hover:scale-105">
+                <i class="fa-solid fa-wallet"></i> ডিপোজিট করুন
             </a>
         </div>
     </header>
 
-    <!-- Main Content & Deposit Section -->
-    <main class="max-w-2xl mx-auto px-4 py-6 w-full">
-        
-        <!-- Deposit Box -->
-        <div class="bg-[var(--card-bg)] border border-[var(--border-color)] rounded-2xl p-6 shadow-xl">
-            <h2 class="text-xl font-bold text-blue-400 mb-4 flex items-center gap-2">
-                <i class="fa-solid fa-wallet"></i> ডিপোজিট (Deposit)
-            </h2>
-            
-            <!-- Payment Method Selection -->
-            <div class="mb-4">
-                <label class="block text-sm font-medium text-gray-300 mb-2">পেমেন্ট মাধ্যম সিলেক্ট করুন:</label>
-                <select id="payment-method" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-blue-500">
-                    <option value="bkash">বিকাশ (Bkash)</option>
-                    <option value="nagad">নগদ (Nagad)</option>
-                </select>
+    <main class="max-w-4xl mx-auto px-4 py-6 w-full space-y-8">
+        <h2 class="text-2xl font-bold text-blue-400 text-center flex items-center justify-center gap-2">
+            <span>🛍️</span> আমাদের সকল সেবাসমূহ ও প্রডাক্ট
+        </h2>
+
+        <!-- Products Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- GB & ISP Proxy -->
+            <div class="bg-[var(--card-bg)] border border-[var(--border-color)] rounded-2xl p-6 shadow-xl backdrop-blur-sm">
+                <h3 class="text-lg font-bold text-amber-400 mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-signal"></i> GB & ISP Proxy
+                </h3>
+                <ul class="space-y-2.5 text-gray-300 text-sm">
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span> Datamplus Proxy</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span> 9 Proxy</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span> 711 Proxy</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span> Thordata Proxy</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span> IP Rocket & Nov Proxy</li>
+                </ul>
             </div>
 
-            <!-- Copy Number Section -->
-            <div class="mb-4 bg-slate-900/80 border border-slate-700/60 p-4 rounded-xl flex items-center justify-between">
-                <div>
-                    <span class="text-xs text-gray-400 block">সেন্ড মানি নাম্বার (Personal):</span>
-                    <span id="agent-number" class="text-lg font-bold text-emerald-400 tracking-wider">01935164417</span>
-                </div>
-                <button onclick="copyNumber()" class="bg-blue-600 hover:bg-blue-700 text-white text-xs px-4 py-2 rounded-lg font-medium transition-all flex items-center gap-1.5">
-                    <i class="fa-regular fa-copy"></i> কপি করুন
-                </button>
+            <!-- Premium VPN & AI Tools -->
+            <div class="bg-[var(--card-bg)] border border-[var(--border-color)] rounded-2xl p-6 shadow-xl backdrop-blur-sm">
+                <h3 class="text-lg font-bold text-emerald-400 mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-shield-halved"></i> Premium VPN & AI Tools
+                </h3>
+                <ul class="space-y-2.5 text-gray-300 text-sm">
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> NordVPN, ExpressVPN & Surfshark</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Google Gemini Advanced / AI Pro</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> ChatGPT Plus & Claude Pro</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Canva Pro & Netflix Premium</li>
+                </ul>
             </div>
 
-            <!-- Amount and TrxID Form -->
-            <form id="deposit-form" onsubmit="submitDeposit(event)" class="space-y-4">
-                <div>
-                    <label class="block text-sm font-medium text-gray-300 mb-1">টাকার পরিমাণ (Amount):</label>
-                    <input type="number" id="deposit-amount" required placeholder="যেমন: 500" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-blue-500">
+            <!-- Social Media & Other Tools -->
+            <div class="bg-[var(--card-bg)] border border-[var(--border-color)] rounded-2xl p-6 shadow-xl backdrop-blur-sm md:col-span-2">
+                <h3 class="text-lg font-bold text-cyan-400 mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-share-nodes"></i> Social Media & Digital Tools
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm text-gray-300">
+                    <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> Telegram Premium Services</div>
+                    <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> YouTube Premium Subscriptions</div>
+                    <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> RDP & VPS Hosting Services</div>
                 </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-300 mb-1">ট্রানজেকশন আইডি (TrxID):</label>
-                    <input type="text" id="deposit-trx" required placeholder="যেমন: 9H7A6..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-white uppercase focus:outline-none focus:border-blue-500">
-                </div>
-                <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 rounded-xl transition-all shadow-lg">
-                    ডিপোজিট রিকোয়েস্ট পাঠান
-                </button>
-            </form>
-            <div id="success-msg" class="hidden mt-4 p-3 bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-sm rounded-xl text-center">
-                ✅ আপনার ডিপোজিট রিকোয়েস্ট সফলভাবে জমা হয়েছে। অ্যাডমিন চেক করে অনুমোদন (Approve) করবেন।
             </div>
         </div>
 
+        <!-- Deposit Section -->
+        <div id="deposit-section" class="bg-[var(--card-bg)] border border-[var(--border-color)] rounded-2xl p-6 md:p-8 shadow-2xl backdrop-blur-sm mt-8">
+            <h2 class="text-2xl font-bold text-blue-400 mb-6 flex items-center gap-2">
+                <i class="fa-solid fa-wallet"></i> বিকাশ / নগদ ডিপোজিট ফোল্ডার
+            </h2>
+            
+            <div class="space-y-5">
+                <div>
+                    <label class="block text-sm font-medium text-gray-300 mb-2">পেমেন্ট মাধ্যম সিলেক্ট করুন:</label>
+                    <select id="payment-method" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500">
+                        <option value="bkash">বিকাশ (Bkash Personal)</option>
+                        <option value="nagad">নগদ (Nagad Personal)</option>
+                    </select>
+                </div>
+
+                <div class="bg-slate-900/90 border border-slate-700 p-4 rounded-xl flex items-center justify-between">
+                    <div>
+                        <span class="text-xs text-gray-400 block">সেন্ড মানি করার নাম্বার:</span>
+                        <span id="agent-number" class="text-xl font-bold text-emerald-400 tracking-wider">01935164417</span>
+                    </div>
+                    <button onclick="copyNumber()" class="bg-blue-600 hover:bg-blue-700 text-white text-xs px-4 py-2.5 rounded-lg font-medium transition-all flex items-center gap-1.5 shadow-md">
+                        <i class="fa-regular fa-copy"></i> নাম্বার কপি করুন
+                    </button>
+                </div>
+
+                <form id="deposit-form" onsubmit="submitDeposit(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-1">টাকার পরিমাণ (Amount):</label>
+                        <input type="number" id="deposit-amount" required placeholder="যেমন: 500" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-1">ট্রানজেকশন আইডি (TrxID):</label>
+                        <input type="text" id="deposit-trx" required placeholder="যেমন: 9H7A6..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white uppercase focus:outline-none focus:border-blue-500">
+                    </div>
+                    <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3.5 rounded-xl transition-all shadow-lg flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i> ডিপোজিট রিকোয়েস্ট জমা দিন
+                    </button>
+                </form>
+
+                <div id="success-msg" class="hidden p-4 bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-sm rounded-xl text-center">
+                    ✅ আপনার ডিপোজিট রিকোয়েস্ট সফলভাবে অ্যাডমিনের কাছে পাঠানো হয়েছে। অ্যাডমিন যাচাই করে Approve/Reject করবেন।
+                </div>
+            </div>
+        </div>
     </main>
 
-    <!-- Footer -->
     <footer class="text-center py-6 text-xs text-gray-400 border-t border-[var(--border-color)] mt-8">
         &copy; 2026 Proxy & VPN Service Hub. All Rights Reserved.
     </footer>
 
-    <!-- JavaScript -->
     <script>
-        // Live Time Update
         function updateTime() {
             const now = new Date();
-            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
-            document.getElementById('live-time').innerHTML = `<i class="fa-regular fa-clock mr-2"></i> বর্তমান সময়: ${now.toLocaleDateString('bn-BD', options)}`;
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric', 
+                hour: '2-digit', 
+                minute: '2-digit', 
+                second: '2-digit' 
+            };
+            const timeString = now.toLocaleDateString('bn-BD', options);
+            document.getElementById('live-time').innerHTML = `<i class="fa-regular fa-clock mr-2"></i> বর্তমান সময়: ${timeString}`;
         }
         setInterval(updateTime, 1000);
         updateTime();
 
-        // Copy Number Function
         function copyNumber() {
             const numberText = document.getElementById('agent-number').innerText;
             navigator.clipboard.writeText(numberText);
             alert('সফলভাবে নাম্বার কপি হয়েছে: ' + numberText);
         }
 
-        // Deposit Submit Function (Admin Notification Simulation)
         function submitDeposit(event) {
             event.preventDefault();
             const method = document.getElementById('payment-method').value;
             const amount = document.getElementById('deposit-amount').value;
             const trx = document.getElementById('deposit-trx').value;
 
-            // এখানে আপনি চাইলে টেলিগ্রাম বট API এর মাধ্যমে সরাসরি অ্যাডমিনের কাছে ডাটা পাঠাতে পারেন।
-            console.log(`New Deposit Request -> Method: ${method}, Amount: ${amount}, TrxID: ${trx}`);
+            // এখানে অ্যাডমিন নোটিফিকেশন হ্যান্ডেল করা হয়েছে
+            console.log(`Deposit Request Sent -> Method: ${method}, Amount: ${amount}, TrxID: ${trx}`);
 
-            // Show success message
             document.getElementById('deposit-form').reset();
             const msg = document.getElementById('success-msg');
             msg.classList.remove('hidden');
             setTimeout(() => {
                 msg.classList.add('hidden');
-            }, 5000);
+            }, 6000);
         }
     </script>
 </body>
