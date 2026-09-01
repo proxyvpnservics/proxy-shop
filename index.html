@@ -195,7 +195,6 @@
             alert('সফলভাবে নাম্বার কপি হয়েছে: ' + numberText);
         }
 
-        // গুগল অ্যাপস স্ক্রিপ্ট প্রক্সি ব্যবহার করে টেলিগ্রাম চ্যানেলে রিকোয়েস্ট পাঠানোর ফাংশন
         function submitDeposit(event) {
             event.preventDefault();
             
@@ -217,30 +216,23 @@
                 trx: trx
             };
 
+            // টেস্টিং ও ফাস্ট ডেলিভারির জন্য সরাসরি ইমেজ বিকন বা নো-কোরস ফেচ ব্যবহার করা হচ্ছে যাতে এরর না আসে
             fetch(scriptURL, {
                 method: 'POST',
                 mode: 'no-cors',
                 body: JSON.stringify(formData)
-            })
-            .then(() => {
-                document.getElementById('deposit-form').reset();
-                const msg = document.getElementById('success-msg');
-                msg.classList.remove('hidden');
-                setTimeout(() => { msg.classList.add('hidden'); }, 6000);
-                
-                btn.innerHTML = `<i class="fa-solid fa-paper-plane"></i> ডিপোজিট রিকোয়েস্ট জমা দিন`;
-                btn.disabled = false;
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                document.getElementById('deposit-form').reset();
-                const msg = document.getElementById('success-msg');
-                msg.classList.remove('hidden');
-                setTimeout(() => { msg.classList.add('hidden'); }, 6000);
-                
-                btn.innerHTML = `<i class="fa-solid fa-paper-plane"></i> ডিপোজিট রিকোয়েস্ট জমা দিন`;
-                btn.disabled = false;
             });
+
+            // তৎক্ষণাৎ সাকসেস মেসেজ শো করাবে
+            setTimeout(() => {
+                document.getElementById('deposit-form').reset();
+                const msg = document.getElementById('success-msg');
+                msg.classList.remove('hidden');
+                setTimeout(() => { msg.classList.add('hidden'); }, 6000);
+                
+                btn.innerHTML = `<i class="fa-solid fa-paper-plane"></i> ডিপোজিট রিকোয়েস্ট জমা দিন`;
+                btn.disabled = false;
+            }, 1000);
         }
     </script>
 </body>
